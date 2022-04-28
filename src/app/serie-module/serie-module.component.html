@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Taller Angular</title>
+</head>
+<body>
+  <nav class="navbar" id="navigation-bar">
+    <a>
+      <img src="../../assets/tvlogo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      <h3 id="h1-title">TV Series</h3>
+    </a>
+  </nav>
+  <div class="container-fluid container-movies">
+    <div class="row">
+      <div class="col-4 offset-3">
+        <table class="table table-light table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Channel</th>
+              <th scope="col">Season</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <tr *ngFor="let serie of series; let i = index;">
+            <td scope="row">
+              {{serie.id}}
+            </td>
+            <td>
+              <a href="{{serie.webpage}}" target="_blank">{{serie.name}}</a>
+            </td>
+            <td>
+              {{serie.channel}}
+            </td>
+            <td>
+              {{serie.seasons}}
+            </td>
+          </tr>
+          </tbody>
+         </table>
+        <div class="col-6" id="average-season">
+            Seasons average: {{averageSeason()}}
+        </div>
+      </div>
+      <div class="col-2" id="card">
+      </div>
+    </div>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

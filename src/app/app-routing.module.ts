@@ -1,10 +1,21 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SerieModuleComponent } from './serie-module/serie-module.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'series',
+    component: SerieModuleComponent
+  }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload'})
+    ],
+    exports: [RouterModule],
+    declarations: []
 })
 export class AppRoutingModule { }
